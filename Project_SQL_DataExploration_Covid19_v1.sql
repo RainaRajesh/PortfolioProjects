@@ -8,13 +8,13 @@ Source:		Raw data on confirmed cases and deaths for all countries is sourced fro
 Dataset:	Coronavirus Pandemic (COVID-19) - Statistics and Research - Our World in Data 
 Link:		(https://ourworldindata.org/coronavirus#coronavirus-country-profiles)
 
-
 Skills:		JOIN, Common Table Expression (CTE), Temporary Tables (TEMP TABLES), VIEW, Functions, Data type manipulation 
+
+Tools:		MS Excel, MS SQL Server 2019
 
 */
 
 -- Query the imported tables
-
 -- covid_deaths table
 
 SELECT * 
@@ -29,7 +29,6 @@ ORDER BY location, date
 
 -- location includes continent names, and continent is NULL for those locations
 -- Create queries to not use data where the continent as NULL
-
 -- covid_deaths table
 
 SELECT * 
@@ -93,7 +92,6 @@ GROUP BY continent
 ORDER BY death_count DESC
 
 -- Global numbers
-
 -- Total number of cases
 
 SELECT SUM(new_cases) as case_count
@@ -108,7 +106,6 @@ FROM CovidDataWorld..covid_deaths
 WHERE continent IS NOT NULL
 
 -- JOIN
-
 -- Join the two tables on location and date
 
 SELECT *
